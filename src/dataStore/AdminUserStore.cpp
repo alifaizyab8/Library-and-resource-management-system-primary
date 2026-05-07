@@ -10,14 +10,14 @@ bool AdministratorStore::save(Administrator &admin)
 {
     if (admin.getAdminId() == 0)
     {
-        int newId = dataStore.empty() ? 1 : dataStore.back().getAdminId() + 1;
+        int newId = arr.empty() ? 1 : arr.back().getAdminId() + 1;
         admin.setAdminId(newId);
-        dataStore.push_back(admin);
+        arr.push_back(admin);
     }
     else
     {
         bool found = false;
-        for (auto &a : dataStore)
+        for (auto &a : arr)
         {
             if (a.getAdminId() == admin.getAdminId())
             {
@@ -35,11 +35,11 @@ bool AdministratorStore::save(Administrator &admin)
 
 bool AdministratorStore::deleteAdministrator(int adminId)
 {
-    for (auto it = dataStore.begin(); it != dataStore.end(); ++it)
+    for (auto it = arr.begin(); it != arr.end(); ++it)
     {
         if (it->getAdminId() == adminId)
         {
-            dataStore.erase(it);
+            arr.erase(it);
             saveToFile();
             return true;
         }
@@ -49,7 +49,7 @@ bool AdministratorStore::deleteAdministrator(int adminId)
 
 std::unique_ptr<Administrator> AdministratorStore::getById(int adminId)
 {
-    for (const auto &admin : dataStore)
+    for (const auto &admin : arr)
     {
         if (admin.getAdminId() == adminId)
             return std::make_unique<Administrator>(admin);
@@ -59,7 +59,7 @@ std::unique_ptr<Administrator> AdministratorStore::getById(int adminId)
 
 std::unique_ptr<Administrator> AdministratorStore::getByUsername(const std::string &username)
 {
-    for (const auto &admin : dataStore)
+    for (const auto &admin : arr)
     {
         if (admin.getUsername() == username)
             return std::make_unique<Administrator>(admin);
@@ -69,7 +69,7 @@ std::unique_ptr<Administrator> AdministratorStore::getByUsername(const std::stri
 
 std::vector<Administrator> AdministratorStore::getAllAdministrators()
 {
-    return dataStore;
+    return arr;
 }
 
 /* =========================================================
@@ -82,14 +82,14 @@ bool UserStore::save(User &user)
 {
     if (user.getUserId() == 0)
     {
-        int newId = dataStore.empty() ? 1 : dataStore.back().getUserId() + 1;
+        int newId = arr.empty() ? 1 : arr.back().getUserId() + 1;
         user.setUserId(newId);
-        dataStore.push_back(user);
+        arr.push_back(user);
     }
     else
     {
         bool found = false;
-        for (auto &u : dataStore)
+        for (auto &u : arr)
         {
             if (u.getUserId() == user.getUserId())
             {
@@ -107,11 +107,11 @@ bool UserStore::save(User &user)
 
 bool UserStore::deleteUser(int userId)
 {
-    for (auto it = dataStore.begin(); it != dataStore.end(); ++it)
+    for (auto it = arr.begin(); it != arr.end(); ++it)
     {
         if (it->getUserId() == userId)
         {
-            dataStore.erase(it);
+            arr.erase(it);
             saveToFile();
             return true;
         }
@@ -121,7 +121,7 @@ bool UserStore::deleteUser(int userId)
 
 std::unique_ptr<User> UserStore::getById(int userId)
 {
-    for (const auto &user : dataStore)
+    for (const auto &user : arr)
     {
         if (user.getUserId() == userId)
             return std::make_unique<User>(user);
@@ -131,7 +131,7 @@ std::unique_ptr<User> UserStore::getById(int userId)
 
 std::unique_ptr<User> UserStore::getByUsername(const std::string &username)
 {
-    for (const auto &user : dataStore)
+    for (const auto &user : arr)
     {
         if (user.getUsername() == username)
             return std::make_unique<User>(user);
@@ -141,13 +141,13 @@ std::unique_ptr<User> UserStore::getByUsername(const std::string &username)
 
 std::vector<User> UserStore::getAllUsers()
 {
-    return dataStore;
+    return arr;
 }
 
 std::vector<User> UserStore::getPendingDeletionRequests()
 {
     std::vector<User> pending;
-    for (const auto &user : dataStore)
+    for (const auto &user : arr)
     {
         if (user.getDeletionRequested())
             pending.push_back(user);

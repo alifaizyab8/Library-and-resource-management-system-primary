@@ -6,7 +6,8 @@ class UserMenu
 {
 private:
     UserService &userService;
-    int loggedInUserId;
+    int currentUserId;
+    std::string currentDate;
     // sub menu
     void handleResourceDiscovery();
     void handleCirculation();
@@ -14,7 +15,7 @@ private:
     void handleAccountManagement();
 
 public:
-    UserMenu(UserService &service, int userId);
+    UserMenu(UserService &uService, int userId, const std::string &simulatedDate);
 
     void displayMenu();
 };

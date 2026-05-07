@@ -14,8 +14,8 @@
 using namespace std;
 
 // Constructor
-UserMenu::UserMenu(UserService &service, int userId)
-    : userService(service), loggedInUserId(userId) {}
+UserMenu::UserMenu(UserService &uService, int userId, const std::string &simulatedDate)
+    : userService(uService), currentUserId(userId), currentDate(simulatedDate) {}
 
 void UserMenu::displayMenu()
 {
@@ -108,7 +108,7 @@ void UserMenu::handleCirculation()
             int rid;
             cout << YELLOW << "Enter Resource ID to borrow: " << RESET;
             cin >> rid;
-            if (userService.borrowResource(loggedInUserId, rid))
+            if (userService.borrowResource(currentUserId, rid))
                 cout << GREEN << "Borrow request sent for Admin approval!\n"
                      << RESET;
         }
@@ -120,7 +120,7 @@ void UserMenu::handleCirculation()
             cin >> tid;
             cout << YELLOW << "Enter Today's Date (YYYY-MM-DD): " << RESET;
             cin >> date;
-            if (userService.returnResource(loggedInUserId, tid, date))
+            if (userService.returnResource(currentUserId, tid, date))
                 cout << GREEN << "Resource returned successfully!\n"
                      << RESET;
             else
@@ -129,13 +129,13 @@ void UserMenu::handleCirculation()
         }
         else if (choice == 3)
         {
-            auto active = userService.getActiveBorrows(loggedInUserId);
+            auto active = userService.getActiveBorrows(currentUserId);
             for (const auto &t : active)
                 cout << t << "\n";
         }
         else if (choice == 4)
         {
-            auto history = userService.getBorrowingHistory(loggedInUserId);
+            auto history = userService.getBorrowingHistory(currentUserId);
             for (const auto &h : history)
                 cout << h << "\n";
         }
@@ -158,7 +158,7 @@ void UserMenu::handleFinancials()
     {
         if (choice == 1)
         {
-            auto fines = userService.getPendingFines(loggedInUserId);
+            auto fines = userService.getPendingFines(currentUserId);
             if (fines.empty())
                 cout << GREEN << "You have no pending fines!\n"
                      << RESET;
@@ -173,7 +173,7 @@ void UserMenu::handleFinancials()
             cin >> fid;
             cout << YELLOW << "Enter Today's Date (YYYY-MM-DD): " << RESET;
             cin >> date;
-            if (userService.payFine(loggedInUserId, fid, date))
+            if (userService.payFine(currentUserId, fid, date))
                 cout << GREEN << "Fine paid successfully from wallet!\n"
                      << RESET;
         }
@@ -185,13 +185,13 @@ void UserMenu::handleFinancials()
             cin >> amt;
             cout << YELLOW << "Enter Today's Date (YYYY-MM-DD): " << RESET;
             cin >> date;
-            if (userService.submitFundRequest(loggedInUserId, amt, date))
+            if (userService.submitFundRequest(currentUserId, amt, date))
                 cout << GREEN << "Fund request submitted to Admin!\n"
                      << RESET;
         }
         else if (choice == 4)
         {
-            auto requests = userService.getFundRequests(loggedInUserId);
+            auto requests = userService.getFundRequests(currentUserId);
             for (const auto &r : requests)
                 cout << r << "\n";
         }
@@ -214,7 +214,7 @@ void UserMenu::handleAccountManagement()
     {
         if (choice == 1)
         {
-            auto p = userService.getProfile(loggedInUserId);
+            auto p = userService.getProfile(currentUserId);
             if (p)
                 cout << *p << "\n";
         }
@@ -225,13 +225,13 @@ void UserMenu::handleAccountManagement()
             cin >> phone;
             cout << YELLOW << "New Address (No spaces): " << RESET;
             cin >> address;
-            if (userService.updateContactInfo(loggedInUserId, phone, address))
+            if (userService.updateContactInfo(currentUserId, phone, address))
                 cout << GREEN << "Profile updated!\n"
                      << RESET;
         }
         else if (choice == 3)
         {
-            if (userService.requestAccountDeletion(loggedInUserId))
+            if (userService.requestAccountDeletion(currentUserId))
                 cout << GREEN << "Account deletion requested. Pending Admin approval.\n"
                      << RESET;
         }

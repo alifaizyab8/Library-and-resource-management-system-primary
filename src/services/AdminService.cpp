@@ -13,7 +13,7 @@
 
 AdminService::AdminService(UserStore &userRepo, FineStore &fineRepo, ResourceStore &resourceRepo,
                            CategoryStore &categoryRepo, FundRequestStore &fundRequestRepo, TransactionStore &transactionRepo,
-                            MembershipTypeStore &membershipTypeRepo,
+                           MembershipTypeStore &membershipTypeRepo,
                            BorrowingHistoryStore &borrowingHistoryRepo, AdministratorStore &administratorRepo)
     : userStore(userRepo), fineStore(fineRepo), resourceStore(resourceRepo), categoryStore(categoryRepo),
       fundRequestStore(fundRequestRepo), transactionStore(transactionRepo),
@@ -259,7 +259,7 @@ bool AdminService::generateUserHistoryReport(const std::string &filename)
 {
     std::stringstream reportContent;
 
-    reportContent << endl;
+    reportContent << std::endl;
     reportContent << "Complete Customer Borrowing History\n";
     reportContent << "===================================\n";
 
@@ -315,7 +315,7 @@ bool AdminService::generateIssuedAndOverdueReport(const std::string &filename)
 {
     std::stringstream reportContent;
 
-    reportContent << endl;
+    reportContent << std::endl;
     reportContent << "Issued and Overdue Resources Report\n";
     reportContent << "===================================\n";
 

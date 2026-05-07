@@ -40,6 +40,15 @@ public:
     void setId(int id) { historyId = id; }
     void setReturnDate(const string &date) { returnDate = date; }
     void setFineAmount(double fine) { fineAmount = fine; }
+    friend std::ostream &operator<<(std::ostream &out, const BorrowingHistory &h)
+    {
+        out << "Record ID: " << h.historyId << " | Resource ID: " << h.resourceId
+            << " | Issued: " << h.issueDate << " | Due: " << h.dueDate << " | Returned: "
+            << (h.returnDate.empty() ? "Pending" : h.returnDate)
+            << " | Fine: $" << h.fineAmount;
+
+        return out;
+    }
     friend ofstream &writeToFile(ofstream &out, const BorrowingHistory &b)
     {
         out << b.historyId << '|' << b.userId << '|' << b.resourceId << '|'

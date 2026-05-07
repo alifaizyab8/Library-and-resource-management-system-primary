@@ -3,6 +3,8 @@
 #include "Person.h"
 #include <string>
 
+#include <fstream>
+using namespace std;
 class User : public Person
 {
 private:
@@ -58,4 +60,36 @@ public:
         return os;
     }
 
+    friend ofstream &writeToFile(ofstream &out, const User &u)
+    {
+        out << u.id << '|' << u.username << '|' << u.password << '|' << u.firstName << '|'
+            << u.lastName << '|' << u.email << '|' << u.isActive << '|' << u.address << '|'
+            << u.phone << '|' << u.balance << '|' << u.membershipTypeId << '|'
+            << u.registrationDate << '|' << u.deletionRequested;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, User &u)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        u.id = stoi(t);
+        getline(in, u.username, '|');
+        getline(in, u.password, '|');
+        getline(in, u.firstName, '|');
+        getline(in, u.lastName, '|');
+        getline(in, u.email, '|');
+        getline(in, t, '|');
+        u.isActive = stoi(t);
+        getline(in, u.address, '|');
+        getline(in, u.phone, '|');
+        getline(in, t, '|');
+        u.balance = stod(t);
+        getline(in, t, '|');
+        u.membershipTypeId = stoi(t);
+        getline(in, u.registrationDate, '|');
+        getline(in, t);
+        u.deletionRequested = stoi(t);
+        return in;
+    }
 };

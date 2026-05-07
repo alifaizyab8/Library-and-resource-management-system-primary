@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include<fstream>
+using namespace std;
 
 class Fine
 {
@@ -48,5 +50,32 @@ public:
            << " | Amount: $" << f.getFineAmount()
            << " | Status: " << (f.getIsPaid() ? "PAID" : "UNPAID");
         return os;
+    }
+    friend ofstream &writeToFile(ofstream &out, const Fine &f)
+    {
+        out << f.fineId << '|' << f.transactionId << '|' << f.userId << '|'
+            << f.daysOverdue << '|' << f.fineAmount << '|' << f.fineDate << '|'
+            << f.isPaid << '|' << f.paymentDate;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, Fine &f)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        f.fineId = stoi(t);
+        getline(in, t, '|');
+        f.transactionId = stoi(t);
+        getline(in, t, '|');
+        f.userId = stoi(t);
+        getline(in, t, '|');
+        f.daysOverdue = stoi(t);
+        getline(in, t, '|');
+        f.fineAmount = stod(t);
+        getline(in, f.fineDate, '|');
+        getline(in, t, '|');
+        f.isPaid = stoi(t);
+        getline(in, f.paymentDate);
+        return in;
     }
 };

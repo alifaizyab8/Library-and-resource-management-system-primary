@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <fstream>
+
+using namespace std;
 class Transaction
 {
 private:
@@ -51,8 +54,9 @@ public:
     void setRenewalCount(int count) { renewalCount = count; }
     void setTransactionStatus(const std::string &s) { transactionStatus = s; }
 
-    // operator overloading 
-    friend std::ostream &operator<<(std::ostream &os, const Transaction &t){
+    // operator overloading
+    friend std::ostream &operator<<(std::ostream &os, const Transaction &t)
+    {
         os << "Txn ID: " << t.getTransactionId()
            << " | User: " << t.getUserId()
            << " | Res: " << t.getResourceId()
@@ -60,5 +64,37 @@ public:
            << " | Due: " << (t.getDueDate().empty() ? "N/A" : t.getDueDate());
 
         return os;
+    }
+    friend ofstream &writeToFile(ofstream &out, const Transaction &txn)
+    {
+        out << txn.transactionId << '|' << txn.userId << '|' << txn.resourceId << '|'
+            << txn.issueDate << '|' << txn.dueDate << '|' << txn.returnDate << '|'
+            << txn.fineAmount << '|' << txn.isReturned << '|' << txn.isOverdue << '|'
+            << txn.renewalCount << '|' << txn.transactionStatus;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, Transaction &txn)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        txn.transactionId = stoi(t);
+        getline(in, t, '|');
+        txn.userId = stoi(t);
+        getline(in, t, '|');
+        txn.resourceId = stoi(t);
+        getline(in, txn.issueDate, '|');
+        getline(in, txn.dueDate, '|');
+        getline(in, txn.returnDate, '|');
+        getline(in, t, '|');
+        txn.fineAmount = stod(t);
+        getline(in, t, '|');
+        txn.isReturned = stoi(t);
+        getline(in, t, '|');
+        txn.isOverdue = stoi(t);
+        getline(in, t, '|');
+        txn.renewalCount = stoi(t);
+        getline(in, txn.transactionStatus);
+        return in;
     }
 };

@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <fstream>
+using namespace std;
+
 class Resource
 {
 private:
@@ -63,5 +66,37 @@ public:
            << " | Category ID: " << r.getCategoryId()
            << " | Avail: " << r.getAvailableCopies() << "/" << r.getTotalCopies();
         return os;
+    }
+    friend ofstream &writeToFile(ofstream &out, const Resource &r)
+    {
+        out << r.resourceId << '|' << r.title << '|' << r.author << '|' << r.publisher << '|'
+            << r.publicationYear << '|' << r.isbn << '|' << r.categoryId << '|'
+            << r.totalCopies << '|' << r.availableCopies << '|' << r.description << '|'
+            << r.addedDate << '|' << r.isActive;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, Resource &r)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        r.resourceId = stoi(t);
+        getline(in, r.title, '|');
+        getline(in, r.author, '|');
+        getline(in, r.publisher, '|');
+        getline(in, t, '|');
+        r.publicationYear = stoi(t);
+        getline(in, r.isbn, '|');
+        getline(in, t, '|');
+        r.categoryId = stoi(t);
+        getline(in, t, '|');
+        r.totalCopies = stoi(t);
+        getline(in, t, '|');
+        r.availableCopies = stoi(t);
+        getline(in, r.description, '|');
+        getline(in, r.addedDate, '|');
+        getline(in, t);
+        r.isActive = stoi(t);
+        return in;
     }
 };

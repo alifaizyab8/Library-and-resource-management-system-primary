@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <fstream>
+using namespace std;
 
 class FundRequest
 {
@@ -50,5 +52,29 @@ public:
            << " | Status: " << req.getStatus();
         return os;
     }
-
+    friend ofstream &writeToFile(ofstream &out, const FundRequest &req)
+    {
+        out << req.requestId << '|' << req.userId << '|' << req.requestedAmount << '|'
+            << req.requestDate << '|' << req.status << '|' << req.adminId << '|'
+            << req.approvalDate << '|' << req.adminNotes;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, FundRequest &req)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        req.requestId = stoi(t);
+        getline(in, t, '|');
+        req.userId = stoi(t);
+        getline(in, t, '|');
+        req.requestedAmount = stod(t);
+        getline(in, req.requestDate, '|');
+        getline(in, req.status, '|');
+        getline(in, t, '|');
+        req.adminId = stoi(t);
+        getline(in, req.approvalDate, '|');
+        getline(in, req.adminNotes);
+        return in;
+    }
 };

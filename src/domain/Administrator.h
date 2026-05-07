@@ -2,6 +2,8 @@
 #include "Person.h"
 #include <string>
 #include <iostream>
+#include <fstream>
+using namespace std;
 
 class Administrator : public Person
 {
@@ -37,5 +39,27 @@ public:
            << " | Username: " << a.getUsername()
            << " | Active: " << (a.getIsActive() ? "Yes" : "No");
         return os;
+    }
+    friend ofstream &writeToFile(ofstream &out, const Administrator &a)
+    {
+        out << a.id << '|' << a.username << '|' << a.password << '|' << a.firstName << '|'
+            << a.lastName << '|' << a.email << '|' << a.isActive << '|' << a.createdDate;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, Administrator &a)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        a.id = stoi(t);
+        getline(in, a.username, '|');
+        getline(in, a.password, '|');
+        getline(in, a.firstName, '|');
+        getline(in, a.lastName, '|');
+        getline(in, a.email, '|');
+        getline(in, t, '|');
+        a.isActive = stoi(t);
+        getline(in, a.createdDate);
+        return in;
     }
 };

@@ -9,7 +9,7 @@ template <typename T>
 class BaseRepository
 {
 protected:
-    vector<T> arr;
+    vector<T> dataStore;
     string filename;
 
     void loadFromFile()
@@ -20,7 +20,7 @@ protected:
         T item;
         while (file >> item) // Overloaded Operator used here
         {
-            arr.push_back(item);
+            dataStore.push_back(item);
         }
         file.close();
     }
@@ -32,7 +32,7 @@ protected:
         all previous data deleted and current state is preserved */ 
         if (!file.is_open())
             return; // If file did not open
-        for (const auto &item : arr)
+        for (const auto &item : dataStore)
         {
             file << item << "\n"; // Overloaded Operator used here
         }

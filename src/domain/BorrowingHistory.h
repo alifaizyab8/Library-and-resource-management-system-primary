@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class BorrowingHistory
@@ -39,5 +40,27 @@ public:
     void setId(int id) { historyId = id; }
     void setReturnDate(const string &date) { returnDate = date; }
     void setFineAmount(double fine) { fineAmount = fine; }
+    friend ofstream &writeToFile(ofstream &out, const BorrowingHistory &b)
+    {
+        out << b.historyId << '|' << b.userId << '|' << b.resourceId << '|'
+            << b.issueDate << '|' << b.dueDate << '|' << b.returnDate << '|' << b.fineAmount;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, BorrowingHistory &b)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        b.historyId = stoi(t);
+        getline(in, t, '|');
+        b.userId = stoi(t);
+        getline(in, t, '|');
+        b.resourceId = stoi(t);
+        getline(in, b.issueDate, '|');
+        getline(in, b.dueDate, '|');
+        getline(in, b.returnDate, '|');
+        getline(in, t);
+        b.fineAmount = stod(t);
+        return in;
+    }
 };
-

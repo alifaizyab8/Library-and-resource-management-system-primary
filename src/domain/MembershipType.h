@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include<fstream>
+using namespace std;
 class MembershipType
 {
 private:
@@ -49,5 +51,32 @@ public:
            << " | Price: $" << t.getPrice()
            << " | Max Borrow: " << t.getMaxBorrowingLimit() << " items";
         return os;
+    }
+    friend ofstream &writeToFile(ofstream &out, const MembershipType &m)
+    {
+        out << m.membershipTypeId << '|' << m.membershipName << '|' << m.durationDays << '|'
+            << m.price << '|' << m.maxBorrowingLimit << '|' << m.borrowingDurationDays << '|'
+            << m.finePerDay << '|' << m.description;
+        return out;
+    }
+    friend ifstream &readFromFile(ifstream &in, MembershipType &m)
+    {
+        string t;
+        if (!getline(in, t, '|'))
+            return in;
+        m.membershipTypeId = stoi(t);
+        getline(in, m.membershipName, '|');
+        getline(in, t, '|');
+        m.durationDays = stoi(t);
+        getline(in, t, '|');
+        m.price = stod(t);
+        getline(in, t, '|');
+        m.maxBorrowingLimit = stoi(t);
+        getline(in, t, '|');
+        m.borrowingDurationDays = stoi(t);
+        getline(in, t, '|');
+        m.finePerDay = stod(t);
+        getline(in, m.description);
+        return in;
     }
 };

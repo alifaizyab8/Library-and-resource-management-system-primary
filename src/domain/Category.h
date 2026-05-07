@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-
+#include <fstream>
 class Category
 {
 private:
@@ -31,5 +31,20 @@ public:
            << " | Name: " << c.getName()
            << " | Desc: " << c.getDescription();
         return os;
+    }
+    friend std::ofstream &writeToFile(std::ofstream &out, const Category &c)
+    {
+        out << c.categoryId << '|' << c.name << '|' << c.description;
+        return out;
+    }
+    friend std::ifstream &readFromFile(std::ifstream &in, Category &c)
+    {
+        std::string t;
+        if (!std::getline(in, t, '|'))
+            return in;
+        c.categoryId = std::stoi(t);
+        std::getline(in, c.name, '|');
+        std::getline(in, c.description);
+        return in;
     }
 };

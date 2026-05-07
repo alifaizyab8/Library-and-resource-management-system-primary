@@ -1,0 +1,2 @@
+1|Basic|365|0.00|3|14|1.00|Basic membership with 3 book limit
+2|Premium|365|50.00|10|30|0.50|Premium membership with extended borrowing

@@ -1,0 +1,3 @@
+1|The Great Gatsby|F. Scott Fitzgerald|Scribner|1925|9780743273565|1|5|5|Classic novel|2024-01-01|1
+2|1984|George Orwell|Secker & Warburg|1949|9780451524935|1|3|3|Dystopian fiction|2024-01-01|1
+3|To Kill a Mockingbird|Harper Lee|J.B. Lippincott|1960|9780446310789|2|4|4|Southern Gothic|2024-01-01|1

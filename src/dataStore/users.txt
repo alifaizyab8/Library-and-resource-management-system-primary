@@ -1,0 +1,2 @@
+1|john|password123|John|Smith|john@email.com|1|123 Main St|555-0123|125|2|2024-01-01|0
+2|jane|password123|Jane|Doe|jane@email.com|1|456 Oak Ave|555-5678|50|2|2024-01-02|0

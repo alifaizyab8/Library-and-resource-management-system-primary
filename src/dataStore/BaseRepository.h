@@ -9,14 +9,17 @@ template <typename T>
 class BaseRepository
 {
 protected:
-    std::vector<T> arr; // Renamed to arr per your request
+    std::vector<T> arr;
     std::string filename;
 
-    void loadFromFile()
+     void loadFromFile()
     {
         std::ifstream persistentStorage(filename);
         if (!persistentStorage.is_open())
+        {
+            std::cerr << "Warning: Could not open " << filename << " for reading.\n";
             return;
+        }
         T item;
         while (readFromFile(persistentStorage, item))
         {

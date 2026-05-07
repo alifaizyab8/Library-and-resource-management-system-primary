@@ -2,45 +2,42 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include <memory>
-using namespace std;
+#include <iostream>
 
 template <typename T>
 class BaseRepository
 {
 protected:
-    vector<T> dataStore;
-    string filename;
+    std::vector<T> arr; // Renamed to arr per your request
+    std::string filename;
 
     void loadFromFile()
     {
-        ifstream file(filename);
-        if (!file.is_open())
-            return; // If file did not open
+        std::ifstream persistentStorage(filename);
+        if (!persistentStorage.is_open())
+            return;
         T item;
-        while (file >> item) // Overloaded Operator used here
+        while (readFromFile(persistentStorage, item))
         {
-            dataStore.push_back(item);
+            arr.push_back(item);
         }
-        file.close();
+        persistentStorage.close();
     }
 
     void saveToFile()
     {
-        ofstream file(filename, ios::trunc); 
-        /* ios::trunc opens the file in write mode,
-        all previous data deleted and current state is preserved */ 
-        if (!file.is_open())
-            return; // If file did not open
-        for (const auto &item : dataStore)
+        std::ofstream persistentStorage(filename, std::ios::trunc);
+        if (!persistentStorage.is_open())
+            return;
+        for (const auto &item : arr)
         {
-            file << item << "\n"; // Overloaded Operator used here
+            writeToFile(persistentStorage, item) << '\n'; // 
         }
-        file.close();
+        persistentStorage.close();
     }
 
 public:
-    BaseRepository(const string &file) : filename(file)
+    BaseRepository(const std::string &persistentStorage) : filename(persistentStorage)
     {
         loadFromFile();
     }

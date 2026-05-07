@@ -8,7 +8,7 @@ template <typename T>
 class BaseRepository
 {
 protected:
-    std::vector<T> arr; // Renamed to arr per your request
+    std::vector<T> dataStore; // Renamed to arr per your request
     std::string filename;
 
     void loadFromFile()
@@ -19,7 +19,7 @@ protected:
         T item;
         while (readFromFile(persistentStorage, item))
         {
-            arr.push_back(item);
+            dataStore.push_back(item);
         }
         persistentStorage.close();
     }
@@ -29,7 +29,7 @@ protected:
         std::ofstream persistentStorage(filename, std::ios::trunc);
         if (!persistentStorage.is_open())
             return;
-        for (const auto &item : arr)
+        for (const auto &item : dataStore)
         {
             writeToFile(persistentStorage, item) << '\n'; // 
         }

@@ -1,27 +1,21 @@
 #include "AdminUserStore.h"
-#include <vector>
-// Passes the filename up to the BaseRepository template to load the array
-AdminStore::AdminStore(const std::string &filename)
-    : BaseRepository<Administrator>(filename) {}
 
-AdminStore::~AdminStore() {}
+/* =========================================================
+                 ADMINISTRATOR STORE LOGIC
+   ========================================================= */
 
-/* *************************************************************************
-                 ---------- SAVE ADMINISTRATOR ----------
-   ************************************************************************* */
+AdministratorStore::AdministratorStore(const std::string &filename) : BaseRepository<Administrator>(filename) {}
 
-bool AdminStore::save(Administrator &admin)
+bool AdministratorStore::save(Administrator &admin)
 {
     if (admin.getAdminId() == 0)
     {
-        // INSERT: Auto-increment ID by checking the last item in the vector
         int newId = dataStore.empty() ? 1 : dataStore.back().getAdminId() + 1;
         admin.setAdminId(newId);
         dataStore.push_back(admin);
     }
     else
     {
-        // UPDATE: Find the existing admin and replace it
         bool found = false;
         for (auto &a : dataStore)
         {
@@ -33,49 +27,130 @@ bool AdminStore::save(Administrator &admin)
             }
         }
         if (!found)
-            return false; // ID not found
+            return false;
     }
-
-    saveToFile(); // Update current state
+    saveToFile();
     return true;
 }
-bool AdminStore::deleteAdministrator(int adminId)
+
+bool AdministratorStore::deleteAdministrator(int adminId)
 {
     for (auto it = dataStore.begin(); it != dataStore.end(); ++it)
     {
         if (it->getAdminId() == adminId)
         {
             dataStore.erase(it);
-            saveToFile(); // Commit the deletion to the file
+            saveToFile();
             return true;
         }
     }
     return false;
 }
-std::unique_ptr<Administrator> AdminStore::getById(int adminId)
+
+std::unique_ptr<Administrator> AdministratorStore::getById(int adminId)
 {
     for (const auto &admin : dataStore)
     {
         if (admin.getAdminId() == adminId)
-        {
             return std::make_unique<Administrator>(admin);
-        }
     }
     return nullptr;
 }
-std::unique_ptr<Administrator> AdminStore::getByUsername(const std::string &username)
+
+std::unique_ptr<Administrator> AdministratorStore::getByUsername(const std::string &username)
 {
     for (const auto &admin : dataStore)
     {
         if (admin.getUsername() == username)
-        {
             return std::make_unique<Administrator>(admin);
-        }
     }
     return nullptr;
 }
-std::vector<Administrator> AdminStore::getAllAdministrators()
+
+std::vector<Administrator> AdministratorStore::getAllAdministrators()
 {
-    // The vector is already populated and held in memory by the BaseRepository
     return dataStore;
+}
+
+/* =========================================================
+                     USER STORE LOGIC
+   ========================================================= */
+
+UserStore::UserStore(const std::string &filename) : BaseRepository<User>(filename) {}
+
+bool UserStore::save(User &user)
+{
+    if (user.getUserId() == 0)
+    {
+        int newId = dataStore.empty() ? 1 : dataStore.back().getUserId() + 1;
+        user.setUserId(newId);
+        dataStore.push_back(user);
+    }
+    else
+    {
+        bool found = false;
+        for (auto &u : dataStore)
+        {
+            if (u.getUserId() == user.getUserId())
+            {
+                u = user;
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+            return false;
+    }
+    saveToFile();
+    return true;
+}
+
+bool UserStore::deleteUser(int userId)
+{
+    for (auto it = dataStore.begin(); it != dataStore.end(); ++it)
+    {
+        if (it->getUserId() == userId)
+        {
+            dataStore.erase(it);
+            saveToFile();
+            return true;
+        }
+    }
+    return false;
+}
+
+std::unique_ptr<User> UserStore::getById(int userId)
+{
+    for (const auto &user : dataStore)
+    {
+        if (user.getUserId() == userId)
+            return std::make_unique<User>(user);
+    }
+    return nullptr;
+}
+
+std::unique_ptr<User> UserStore::getByUsername(const std::string &username)
+{
+    for (const auto &user : dataStore)
+    {
+        if (user.getUsername() == username)
+            return std::make_unique<User>(user);
+    }
+    return nullptr;
+}
+
+std::vector<User> UserStore::getAllUsers()
+{
+    return dataStore;
+}
+
+std::vector<User> UserStore::getPendingDeletionRequests()
+{
+    std::vector<User> pending;
+    for (const auto &user : dataStore)
+    {
+        if (user.getDeletionRequested())
+            pending.push_back(user);
+    }
+    return pending;
 }

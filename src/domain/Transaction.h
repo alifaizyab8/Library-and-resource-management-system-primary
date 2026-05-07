@@ -3,7 +3,6 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
 class Transaction
 {
 private:
@@ -26,9 +25,9 @@ public:
     Transaction(int id, int uId, int rId, const std::string &iDate, const std::string &dDate,
                 const std::string &rDate, double fine, bool returned, bool overdue, int renewals, const std::string &status)
         : transactionId(id), userId(uId), resourceId(rId), issueDate(iDate), dueDate(dDate),
-          returnDate(rDate), fineAmount(fine), isReturned(returned), isOverdue(overdue), renewalCount(renewals), transactionStatus(status) {}
+          returnDate(rDate), fineAmount(fine), isReturned(returned), isOverdue(overdue),
+          renewalCount(renewals), transactionStatus(status) {}
 
-    // Getters
     int getTransactionId() const { return transactionId; }
     int getUserId() const { return userId; }
     int getResourceId() const { return resourceId; }
@@ -41,7 +40,6 @@ public:
     int getRenewalCount() const { return renewalCount; }
     std::string getTransactionStatus() const { return transactionStatus; }
 
-    // Setters
     void setTransactionId(int id) { transactionId = id; }
     void setUserId(int id) { userId = id; }
     void setResourceId(int id) { resourceId = id; }
@@ -54,7 +52,6 @@ public:
     void setRenewalCount(int count) { renewalCount = count; }
     void setTransactionStatus(const std::string &s) { transactionStatus = s; }
 
-    // operator overloading
     friend std::ostream &operator<<(std::ostream &os, const Transaction &t)
     {
         os << "Txn ID: " << t.getTransactionId()
@@ -62,10 +59,10 @@ public:
            << " | Res: " << t.getResourceId()
            << " | Status: " << t.getTransactionStatus()
            << " | Due: " << (t.getDueDate().empty() ? "N/A" : t.getDueDate());
-
         return os;
     }
-    friend ofstream &writeToFile(ofstream &out, const Transaction &txn)
+
+    friend std::ofstream &writeToFile(std::ofstream &out, const Transaction &txn)
     {
         out << txn.transactionId << '|' << txn.userId << '|' << txn.resourceId << '|'
             << txn.issueDate << '|' << txn.dueDate << '|' << txn.returnDate << '|'
@@ -73,28 +70,29 @@ public:
             << txn.renewalCount << '|' << txn.transactionStatus;
         return out;
     }
-    friend ifstream &readFromFile(ifstream &in, Transaction &txn)
+
+    friend std::ifstream &readFromFile(std::ifstream &in, Transaction &txn)
     {
-        string t;
-        if (!getline(in, t, '|'))
+        std::string t;
+        if (!std::getline(in, t, '|'))
             return in;
-        txn.transactionId = stoi(t);
-        getline(in, t, '|');
-        txn.userId = stoi(t);
-        getline(in, t, '|');
-        txn.resourceId = stoi(t);
-        getline(in, txn.issueDate, '|');
-        getline(in, txn.dueDate, '|');
-        getline(in, txn.returnDate, '|');
-        getline(in, t, '|');
-        txn.fineAmount = stod(t);
-        getline(in, t, '|');
-        txn.isReturned = stoi(t);
-        getline(in, t, '|');
-        txn.isOverdue = stoi(t);
-        getline(in, t, '|');
-        txn.renewalCount = stoi(t);
-        getline(in, txn.transactionStatus);
+        txn.transactionId = std::stoi(t);
+        std::getline(in, t, '|');
+        txn.userId = std::stoi(t);
+        std::getline(in, t, '|');
+        txn.resourceId = std::stoi(t);
+        std::getline(in, txn.issueDate, '|');
+        std::getline(in, txn.dueDate, '|');
+        std::getline(in, txn.returnDate, '|');
+        std::getline(in, t, '|');
+        txn.fineAmount = std::stod(t);
+        std::getline(in, t, '|');
+        txn.isReturned = std::stoi(t);
+        std::getline(in, t, '|');
+        txn.isOverdue = std::stoi(t);
+        std::getline(in, t, '|');
+        txn.renewalCount = std::stoi(t);
+        std::getline(in, txn.transactionStatus);
         return in;
     }
 };

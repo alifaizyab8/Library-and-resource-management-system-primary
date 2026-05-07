@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include<fstream>
-using namespace std;
+#include <fstream>
 
 class Fine
 {
@@ -20,9 +19,9 @@ public:
     Fine() : fineId(0), transactionId(0), userId(0), daysOverdue(0), fineAmount(0.0), isPaid(false) {}
 
     Fine(int id, int tId, int uId, int days, double amount, const std::string &fDate, bool paid, const std::string &pDate)
-        : fineId(id), transactionId(tId), userId(uId), daysOverdue(days), fineAmount(amount), fineDate(fDate), isPaid(paid), paymentDate(pDate) {}
+        : fineId(id), transactionId(tId), userId(uId), daysOverdue(days), fineAmount(amount),
+          fineDate(fDate), isPaid(paid), paymentDate(pDate) {}
 
-    // Getters
     int getFineId() const { return fineId; }
     int getTransactionId() const { return transactionId; }
     int getUserId() const { return userId; }
@@ -32,7 +31,6 @@ public:
     bool getIsPaid() const { return isPaid; }
     std::string getPaymentDate() const { return paymentDate; }
 
-    // Setters
     void setFineId(int id) { fineId = id; }
     void setTransactionId(int tId) { transactionId = tId; }
     void setUserId(int uId) { userId = uId; }
@@ -51,31 +49,33 @@ public:
            << " | Status: " << (f.getIsPaid() ? "PAID" : "UNPAID");
         return os;
     }
-    friend ofstream &writeToFile(ofstream &out, const Fine &f)
+
+    friend std::ofstream &writeToFile(std::ofstream &out, const Fine &f)
     {
         out << f.fineId << '|' << f.transactionId << '|' << f.userId << '|'
             << f.daysOverdue << '|' << f.fineAmount << '|' << f.fineDate << '|'
             << f.isPaid << '|' << f.paymentDate;
         return out;
     }
-    friend ifstream &readFromFile(ifstream &in, Fine &f)
+
+    friend std::ifstream &readFromFile(std::ifstream &in, Fine &f)
     {
-        string t;
-        if (!getline(in, t, '|'))
+        std::string t;
+        if (!std::getline(in, t, '|'))
             return in;
-        f.fineId = stoi(t);
-        getline(in, t, '|');
-        f.transactionId = stoi(t);
-        getline(in, t, '|');
-        f.userId = stoi(t);
-        getline(in, t, '|');
-        f.daysOverdue = stoi(t);
-        getline(in, t, '|');
-        f.fineAmount = stod(t);
-        getline(in, f.fineDate, '|');
-        getline(in, t, '|');
-        f.isPaid = stoi(t);
-        getline(in, f.paymentDate);
+        f.fineId = std::stoi(t);
+        std::getline(in, t, '|');
+        f.transactionId = std::stoi(t);
+        std::getline(in, t, '|');
+        f.userId = std::stoi(t);
+        std::getline(in, t, '|');
+        f.daysOverdue = std::stoi(t);
+        std::getline(in, t, '|');
+        f.fineAmount = std::stod(t);
+        std::getline(in, f.fineDate, '|');
+        std::getline(in, t, '|');
+        f.isPaid = std::stoi(t);
+        std::getline(in, f.paymentDate);
         return in;
     }
 };

@@ -2,7 +2,6 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 class Resource
 {
@@ -31,7 +30,6 @@ public:
           isbn(isbn), categoryId(catId), totalCopies(tCopies),
           availableCopies(aCopies), description(desc), addedDate(date), isActive(active) {}
 
-    // Getters
     int getResourceId() const { return resourceId; }
     std::string getTitle() const { return title; }
     std::string getAuthor() const { return author; }
@@ -45,7 +43,6 @@ public:
     std::string getAddedDate() const { return addedDate; }
     bool getIsActive() const { return isActive; }
 
-    // Setters
     void setResourceId(int id) { resourceId = id; }
     void setTitle(const std::string &t) { title = t; }
     void setAuthor(const std::string &a) { author = a; }
@@ -67,7 +64,8 @@ public:
            << " | Avail: " << r.getAvailableCopies() << "/" << r.getTotalCopies();
         return os;
     }
-    friend ofstream &writeToFile(ofstream &out, const Resource &r)
+
+    friend std::ofstream &writeToFile(std::ofstream &out, const Resource &r)
     {
         out << r.resourceId << '|' << r.title << '|' << r.author << '|' << r.publisher << '|'
             << r.publicationYear << '|' << r.isbn << '|' << r.categoryId << '|'
@@ -75,28 +73,29 @@ public:
             << r.addedDate << '|' << r.isActive;
         return out;
     }
-    friend ifstream &readFromFile(ifstream &in, Resource &r)
+
+    friend std::ifstream &readFromFile(std::ifstream &in, Resource &r)
     {
-        string t;
-        if (!getline(in, t, '|'))
+        std::string t;
+        if (!std::getline(in, t, '|'))
             return in;
-        r.resourceId = stoi(t);
-        getline(in, r.title, '|');
-        getline(in, r.author, '|');
-        getline(in, r.publisher, '|');
-        getline(in, t, '|');
-        r.publicationYear = stoi(t);
-        getline(in, r.isbn, '|');
-        getline(in, t, '|');
-        r.categoryId = stoi(t);
-        getline(in, t, '|');
-        r.totalCopies = stoi(t);
-        getline(in, t, '|');
-        r.availableCopies = stoi(t);
-        getline(in, r.description, '|');
-        getline(in, r.addedDate, '|');
-        getline(in, t);
-        r.isActive = stoi(t);
+        r.resourceId = std::stoi(t);
+        std::getline(in, r.title, '|');
+        std::getline(in, r.author, '|');
+        std::getline(in, r.publisher, '|');
+        std::getline(in, t, '|');
+        r.publicationYear = std::stoi(t);
+        std::getline(in, r.isbn, '|');
+        std::getline(in, t, '|');
+        r.categoryId = std::stoi(t);
+        std::getline(in, t, '|');
+        r.totalCopies = std::stoi(t);
+        std::getline(in, t, '|');
+        r.availableCopies = std::stoi(t);
+        std::getline(in, r.description, '|');
+        std::getline(in, r.addedDate, '|');
+        std::getline(in, t);
+        r.isActive = std::stoi(t);
         return in;
     }
 };

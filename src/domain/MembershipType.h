@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include<fstream>
-using namespace std;
+#include <fstream>
+
 class MembershipType
 {
 private:
@@ -24,7 +24,6 @@ public:
         : membershipTypeId(id), membershipName(name), durationDays(duration), price(price),
           maxBorrowingLimit(maxLimit), borrowingDurationDays(borrowDuration), finePerDay(fine), description(desc) {}
 
-    // Getters
     int getMembershipTypeId() const { return membershipTypeId; }
     std::string getMembershipName() const { return membershipName; }
     int getDurationDays() const { return durationDays; }
@@ -34,7 +33,6 @@ public:
     double getFinePerDay() const { return finePerDay; }
     std::string getDescription() const { return description; }
 
-    // Setters
     void setMembershipTypeId(int id) { membershipTypeId = id; }
     void setMembershipName(const std::string &name) { membershipName = name; }
     void setDurationDays(int days) { durationDays = days; }
@@ -52,31 +50,33 @@ public:
            << " | Max Borrow: " << t.getMaxBorrowingLimit() << " items";
         return os;
     }
-    friend ofstream &writeToFile(ofstream &out, const MembershipType &m)
+
+    friend std::ofstream &writeToFile(std::ofstream &out, const MembershipType &m)
     {
         out << m.membershipTypeId << '|' << m.membershipName << '|' << m.durationDays << '|'
             << m.price << '|' << m.maxBorrowingLimit << '|' << m.borrowingDurationDays << '|'
             << m.finePerDay << '|' << m.description;
         return out;
     }
-    friend ifstream &readFromFile(ifstream &in, MembershipType &m)
+
+    friend std::ifstream &readFromFile(std::ifstream &in, MembershipType &m)
     {
-        string t;
-        if (!getline(in, t, '|'))
+        std::string t;
+        if (!std::getline(in, t, '|'))
             return in;
-        m.membershipTypeId = stoi(t);
-        getline(in, m.membershipName, '|');
-        getline(in, t, '|');
-        m.durationDays = stoi(t);
-        getline(in, t, '|');
-        m.price = stod(t);
-        getline(in, t, '|');
-        m.maxBorrowingLimit = stoi(t);
-        getline(in, t, '|');
-        m.borrowingDurationDays = stoi(t);
-        getline(in, t, '|');
-        m.finePerDay = stod(t);
-        getline(in, m.description);
+        m.membershipTypeId = std::stoi(t);
+        std::getline(in, m.membershipName, '|');
+        std::getline(in, t, '|');
+        m.durationDays = std::stoi(t);
+        std::getline(in, t, '|');
+        m.price = std::stod(t);
+        std::getline(in, t, '|');
+        m.maxBorrowingLimit = std::stoi(t);
+        std::getline(in, t, '|');
+        m.borrowingDurationDays = std::stoi(t);
+        std::getline(in, t, '|');
+        m.finePerDay = std::stod(t);
+        std::getline(in, m.description);
         return in;
     }
 };

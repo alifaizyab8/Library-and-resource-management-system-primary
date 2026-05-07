@@ -2,7 +2,6 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 class FundRequest
 {
@@ -24,7 +23,6 @@ public:
         : requestId(id), userId(uId), requestedAmount(amount), requestDate(rDate), status(stat),
           adminId(aId), approvalDate(aDate), adminNotes(notes) {}
 
-    // Getters
     int getRequestId() const { return requestId; }
     int getUserId() const { return userId; }
     double getRequestedAmount() const { return requestedAmount; }
@@ -34,7 +32,6 @@ public:
     std::string getApprovalDate() const { return approvalDate; }
     std::string getAdminNotes() const { return adminNotes; }
 
-    // Setters
     void setRequestId(int id) { requestId = id; }
     void setUserId(int uId) { userId = uId; }
     void setRequestedAmount(double amount) { requestedAmount = amount; }
@@ -52,29 +49,31 @@ public:
            << " | Status: " << req.getStatus();
         return os;
     }
-    friend ofstream &writeToFile(ofstream &out, const FundRequest &req)
+
+    friend std::ofstream &writeToFile(std::ofstream &out, const FundRequest &req)
     {
         out << req.requestId << '|' << req.userId << '|' << req.requestedAmount << '|'
             << req.requestDate << '|' << req.status << '|' << req.adminId << '|'
             << req.approvalDate << '|' << req.adminNotes;
         return out;
     }
-    friend ifstream &readFromFile(ifstream &in, FundRequest &req)
+
+    friend std::ifstream &readFromFile(std::ifstream &in, FundRequest &req)
     {
-        string t;
-        if (!getline(in, t, '|'))
+        std::string t;
+        if (!std::getline(in, t, '|'))
             return in;
-        req.requestId = stoi(t);
-        getline(in, t, '|');
-        req.userId = stoi(t);
-        getline(in, t, '|');
-        req.requestedAmount = stod(t);
-        getline(in, req.requestDate, '|');
-        getline(in, req.status, '|');
-        getline(in, t, '|');
-        req.adminId = stoi(t);
-        getline(in, req.approvalDate, '|');
-        getline(in, req.adminNotes);
+        req.requestId = std::stoi(t);
+        std::getline(in, t, '|');
+        req.userId = std::stoi(t);
+        std::getline(in, t, '|');
+        req.requestedAmount = std::stod(t);
+        std::getline(in, req.requestDate, '|');
+        std::getline(in, req.status, '|');
+        std::getline(in, t, '|');
+        req.adminId = std::stoi(t);
+        std::getline(in, req.approvalDate, '|');
+        std::getline(in, req.adminNotes);
         return in;
     }
 };

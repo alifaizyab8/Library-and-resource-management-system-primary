@@ -381,8 +381,6 @@ bool AdminService::processBorrowRequest(int transactionId, bool approve, std::st
     if (!transaction)
         return false;
 
-    transactionStore.beginTransaction();
-
     if (approve)
     {
         transaction->setTransactionStatus("ISSUED");
@@ -396,13 +394,11 @@ bool AdminService::processBorrowRequest(int transactionId, bool approve, std::st
 
             if (!resourceStore.save(*resource))
             {
-                transactionStore.rollbackTransaction();
                 return false;
             }
         }
         else
         {
-            transactionStore.rollbackTransaction();
             return false;
         }
 
@@ -412,7 +408,6 @@ bool AdminService::processBorrowRequest(int transactionId, bool approve, std::st
 
         if (!borrowingHistoryStore.save(historyRecord))
         {
-            transactionStore.rollbackTransaction();
             return false;
         }
     }
@@ -423,12 +418,10 @@ bool AdminService::processBorrowRequest(int transactionId, bool approve, std::st
 
     if (transactionStore.save(*transaction))
     {
-        transactionStore.commitTransaction();
         return true;
     }
     else
     {
-        transactionStore.rollbackTransaction();
         return false;
     }
 }
@@ -441,8 +434,6 @@ bool AdminService::processReturn(int transactionId, std::string &dateToday)
     {
         return false;
     }
-
-    transactionStore.beginTransaction();
 
     std::string today = dateToday;
 
@@ -457,8 +448,7 @@ bool AdminService::processReturn(int transactionId, std::string &dateToday)
 
         if (!resourceStore.save(*resource))
         {
-            transactionStore.rollbackTransaction();
-            return false;
+                    return false;
         }
     }
 
@@ -472,7 +462,6 @@ bool AdminService::processReturn(int transactionId, std::string &dateToday)
 
             if (!borrowingHistoryStore.save(history))
             {
-                transactionStore.rollbackTransaction();
                 return false;
             }
             break;
@@ -481,12 +470,10 @@ bool AdminService::processReturn(int transactionId, std::string &dateToday)
 
     if (transactionStore.save(*txn))
     {
-        transactionStore.commitTransaction();
         return true;
     }
     else
     {
-        transactionStore.rollbackTransaction();
         return false;
     }
 }
@@ -519,14 +506,11 @@ bool AdminService::processFundRequest(int fundRequestId, bool approve, std::stri
 
     request->setApprovalDate(dateToday);
 
-    transactionStore.beginTransaction();
-
     if (approve)
     {
         std::unique_ptr<User> user = userStore.getById(request->getUserId());
         if (!user)
         {
-            transactionStore.rollbackTransaction();
             return false;
         }
 
@@ -545,12 +529,10 @@ bool AdminService::processFundRequest(int fundRequestId, bool approve, std::stri
 
         if (userSaved && requestSaved)
         {
-            transactionStore.commitTransaction();
             return true;
         }
         else
         {
-            transactionStore.rollbackTransaction();
             return false;
         }
     }
@@ -561,12 +543,10 @@ bool AdminService::processFundRequest(int fundRequestId, bool approve, std::stri
 
         if (fundRequestStore.save(*request))
         {
-            transactionStore.commitTransaction();
             return true;
         }
         else
         {
-            transactionStore.rollbackTransaction();
             return false;
         }
     }

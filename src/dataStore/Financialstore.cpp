@@ -3,10 +3,7 @@
 // Transaction store
 TransactionStore::TransactionStore(const std::string &filename) : BaseRepository<Transaction>(filename) {}
 
-// Dummy
-bool TransactionStore::beginTransaction() { return true; }
-bool TransactionStore::commitTransaction() { return true; }
-bool TransactionStore::rollbackTransaction() { return true; }
+
 
 bool TransactionStore::save(Transaction &transaction)
 {

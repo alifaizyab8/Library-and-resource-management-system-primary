@@ -10,10 +10,7 @@ class TransactionStore : public BaseRepository<Transaction>
 public:
     explicit TransactionStore(const std::string &filename);
 
-    // Dummy transaction controls to maintain compatibility
-    bool beginTransaction();
-    bool commitTransaction();
-    bool rollbackTransaction();
+
 
     bool save(Transaction &transaction);
     bool deleteTransaction(int transactionId);

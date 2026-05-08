@@ -1373,14 +1373,14 @@ void AdminMenu::handleGenerateHistoryReport()
 
     std::cout << CYAN << "\n--- USER BORROWING HISTORY REPORT ---\n"
               << RESET;
-    std::cout << YELLOW << "Enter the name of the file to save (e.g., HistoryReport.pdf): " << RESET;
+    std::cout << YELLOW << "Enter the name of the file to save (e.g., HistoryReport): " << RESET;
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, filename);
 
     if (filename.empty())
     {
-        filename = "UserHistoryReport.pdf";
+        filename = "UserHistoryReport";
         std::cout << "No filename provided. Defaulting to: " << filename << "\n";
     }
 
@@ -1400,7 +1400,7 @@ void AdminMenu::handleGenerateHistoryReport()
     catch (const std::exception &e)
     {
         std::cout << RED << "\n [FILE SYSTEM ERROR]\n";
-        std::cout << " Could not generate PDF: " << e.what() << "\n";
+        std::cout << " Could not generate Report: " << e.what() << "\n";
         std::cout << " Hint: Make sure the file isn't already open in another program!\n"
                   << RESET;
     }
@@ -1415,14 +1415,14 @@ void AdminMenu::handleGenerateIssue_OverdueReport()
 
     std::cout << CYAN << "\n--- ISSUED & OVERDUE RESOURCES REPORT ---\n"
               << RESET;
-    std::cout << YELLOW << "Enter the name of the file to save (e.g., OverdueReport.pdf): " << RESET;
+    std::cout << YELLOW << "Enter the name of the file to save (e.g., OverdueReport): " << RESET;
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, filename);
 
     if (filename.empty())
     {
-        filename = "OverdueReport.pdf";
+        filename = "OverdueReport";
         std::cout << "No filename provided. Defaulting to: " << filename << "\n";
     }
 
@@ -1442,7 +1442,7 @@ void AdminMenu::handleGenerateIssue_OverdueReport()
     catch (const std::exception &e)
     {
         std::cout << RED << "\n [FILE SYSTEM ERROR]\n";
-        std::cout << " Could not generate PDF: " << e.what() << "\n";
+        std::cout << " Could not generate Report: " << e.what() << "\n";
         std::cout << " Hint: Make sure the file isn't already open in another program!\n"
                   << RESET;
     }

@@ -5,8 +5,18 @@
 
 void makePdf(std::string filename, std::string title, std::string contentString)
 {
-    // 1. Create the blueprint
-    std::ofstream html("temp_file.html");
+    std::string htmlFilename = filename;
+    size_t dotPos = htmlFilename.find_last_of('.');
+    if (dotPos != std::string::npos)
+    {
+        htmlFilename = htmlFilename.substr(0, dotPos) + ".html";
+    }
+    else
+    {
+        htmlFilename += ".html";
+    }
+    // HTML File created here 
+    std::ofstream html(htmlFilename);
 
     html << "<html><head><style>"
          << "body { font-family: 'Courier New', Courier, monospace; margin: 50px; }"
@@ -19,10 +29,9 @@ void makePdf(std::string filename, std::string title, std::string contentString)
 
     html.close();
 
-    // 2. Convert using the exe in your build folder
-    std::string command = "wkhtmltopdf --quiet temp_file.html " + filename;
-    std::system(command.c_str());
+    std::cout << "Report saved as: " << htmlFilename << "\n";
 
-    // 3. Cleanup
-    std::remove("temp_file.html");
+    // system command to open in browser directly
+    std::string command = "start " + htmlFilename;
+    std::system(command.c_str());
 }

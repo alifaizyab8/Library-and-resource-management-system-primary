@@ -126,7 +126,6 @@ ActiveSession AuthMenu::displayMenu()
                   << RESET;
         std::cout << "1. Member Login\n";
         std::cout << "2. Administrator Login\n";
-        std::cout << "3. Register as New Member\n";
         std::cout << "0. Exit System\n";
         std::cout << CYAN << "========================================\n"
                   << RESET;
@@ -141,7 +140,7 @@ ActiveSession AuthMenu::displayMenu()
             continue; // Silently restart the loop and redraw the menu
         }
 
-        // State Machine Routing
+        
         switch (choice)
         {
         case 1:
@@ -160,19 +159,6 @@ ActiveSession AuthMenu::displayMenu()
             currentSession = handleAdminLogin();
             if (currentSession.adminId != -1)
                 return currentSession;
-
-            std::cout << YELLOW << "\nPress Enter to return to main menu..." << RESET;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cin.get();
-            break;
-
-        case 3:
-            std::cout << CYAN << "\n=== NEW MEMBER REGISTRATION ===\n"
-                      << RESET;
-            std::cout << YELLOW << "Member self-registration is currently disabled.\n"
-                      << RESET;
-            std::cout << YELLOW << "Please contact an Administrator at the front desk to create your account.\n"
-                      << RESET;
 
             std::cout << YELLOW << "\nPress Enter to return to main menu..." << RESET;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

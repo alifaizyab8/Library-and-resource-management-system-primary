@@ -12,7 +12,6 @@ class AuthMenu
 
         ActiveSession handleAdminLogin();
         ActiveSession handleUserLogin();
-        //void handleRegistration();
 
     public:
         AuthMenu(AuthenticationService &authSvc, const std::string &today);

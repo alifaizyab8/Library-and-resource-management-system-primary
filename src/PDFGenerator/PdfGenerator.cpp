@@ -5,13 +5,6 @@
 
 void makePdf(std::string filename, std::string title, std::string contentString)
 {
-    // SAFETY CHECK: Force the filename to end in .pdf 
-    if (filename.length() < 4 || filename.substr(filename.length() - 4) != ".pdf")
-    {
-        filename += ".pdf";
-    }
-
-    // Determine the HTML filename based on the PDF filename
     std::string htmlFilename = filename;
     size_t dotPos = htmlFilename.find_last_of('.');
     if (dotPos != std::string::npos)
@@ -22,8 +15,7 @@ void makePdf(std::string filename, std::string title, std::string contentString)
     {
         htmlFilename += ".html";
     }
-
-    // Create and write the HTML blueprint
+    // HTML File created here 
     std::ofstream html(htmlFilename);
 
     html << "<html><head><style>"
@@ -37,18 +29,9 @@ void makePdf(std::string filename, std::string title, std::string contentString)
 
     html.close();
 
-    // --- PDF CONVERSION LOGIC ---
+    std::cout << "Report saved as: " << htmlFilename << "\n";
 
-    // 1. Convert the HTML to PDF using the bundled tool
-    std::string pdfCommand = "..\\tools\\wkhtmltopdf.exe --quiet " + htmlFilename + " " + filename;
-    std::system(pdfCommand.c_str());
-
-    std::cout << "Report successfully converted to PDF: " << filename << "\n";
-
-    // 2. Open the PDF directly in the default Windows viewer
-    std::string openCommand = "start " + filename;
-    std::system(openCommand.c_str());
-
-    // 3. Delete the temporary HTML file to keep the folder clean
-    std::remove(htmlFilename.c_str());
+    // system command to open in browser directly
+    std::string command = "start " + htmlFilename;
+    std::system(command.c_str());
 }

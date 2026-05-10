@@ -1,4 +1,4 @@
-1|john|password123|John|Smith|john@email.com|1|123 Main St|555-0123|0|2|2024-01-01|0
+1|john|password123|John|Smith|john@email.com|1|321MainStreet|555-0231|445|2|2024-01-01|1
 2|jane|password123|Jane|Doe|jane@email.com|1|456 Oak Ave|555-5678|0|2|2024-01-02|0
 3|alicechen|alice2025|Alice|Chen|alice.chen@email.com|1|789 Pine St|555-1234|0|1|2025-04-08|0
 4|brianw|readmore|Brian|Williams|brian.w@email.com|1|321 Elm Blvd|555-5678|0|2|2025-04-08|0

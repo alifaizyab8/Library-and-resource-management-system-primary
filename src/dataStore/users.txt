@@ -1,2 +1,7 @@
-1|john|password123|John|Smith|john@email.com|1|123 Main St|555-0123|125|2|2024-01-01|0
-2|jane|password123|Jane|Doe|jane@email.com|1|456 Oak Ave|555-5678|50|2|2024-01-02|0
+1|john|password123|John|Smith|john@email.com|1|123 Main St|555-0123|0|2|2024-01-01|0
+2|jane|password123|Jane|Doe|jane@email.com|1|456 Oak Ave|555-5678|0|2|2024-01-02|0
+3|alicechen|alice2025|Alice|Chen|alice.chen@email.com|1|789 Pine St|555-1234|0|1|2025-04-08|0
+4|brianw|readmore|Brian|Williams|brian.w@email.com|1|321 Elm Blvd|555-5678|0|2|2025-04-08|0
+5|carlosm|carlos123|Carlos|Martinez|carlos.m@email.com|1|555 Maple Dr|555-9012|0|1|2025-04-08|0
+6|dianak|diana2025|Diana|Kim|diana.kim@email.com|1|987 Cedar Ln|555-3456|0|3|2025-04-08|0
+7|emilyt|emily123|Emily|Thompson|emily.t@email.com|1|147 Birch Way|555-7890|0|2|2025-04-08|0

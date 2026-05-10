@@ -1,5 +1,5 @@
 1|admin|admin|System|Administrator|admin@library.com|1|2024-04-08
-2|masteradmin|master123|Master|Admin|master@library.com|1|2025-04-08
+2|Syed|Waqar|sww|amsasys|master@library.com|1|2025-04-08
 3|librarian1|libpass123|Sarah|Johnson|sarah.johnson@library.com|1|2025-04-08
 4|librarian2|read2025|Michael|Chen|michael.chen@library.com|1|2025-04-08
 5|librarian3|bookworm|Emily|Rodriguez|emily.rodriguez@library.com|1|2025-04-08

@@ -13,3 +13,153 @@
 13|Computer Vision: Algorithms and Applications|Szeliski|Springer|2010|9781848829343|3|2|2|CV theory and practice|2025-04-08|1
 14|Introduction to Machine Learning|Alpaydin|MIT Press|2014|9780262028189|3|2|2|ML fundamentals|2025-04-08|1
 15|Database System Concepts|Silberschatz|McGraw-Hill|2019|9780078022159|3|3|3|Database theory textbook|2025-04-08|1
+16|The Mythical Man-Month|Fred Brooks|Addison-Wesley|1975|9780201835953|2|4|4|Essays on software engineering and project management|2025-04-08|1
+17|Code Complete|Steve McConnell|Microsoft Press|2004|9780735619678|2|3|3|Comprehensive software construction guide|2025-04-08|1
+18|Refactoring|Martin Fowler|Addison-Wesley|2018|9780134757599|2|3|3|Improving the design of existing code|2025-04-08|1
+19|Domain-Driven Design|Eric Evans|Addison-Wesley|2003|9780321125217|2|2|2|Tackling complexity in software|2025-04-08|1
+20|The Clean Coder|Robert C. Martin|Prentice Hall|2011|9780137081073|2|3|3|Professional conduct for software developers|2025-04-08|1
+21|Working Effectively with Legacy Code|Michael Feathers|Prentice Hall|2004|9780131177055|2|2|2|Strategies for modifying legacy systems|2025-04-08|1
+22|Continuous Delivery|Jez Humble|Addison-Wesley|2010|9780321601919|2|3|3|Reliable software releases through automation|2025-04-08|1
+23|Site Reliability Engineering|Beyer|O'Reilly|2016|9781491929124|2|3|3|Google SRE practices and principles|2025-04-08|1
+24|Test-Driven Development|Kent Beck|Addison-Wesley|2002|9780321146533|2|3|3|By example approach to TDD|2025-04-08|1
+25|Structure and Interpretation of Computer Programs|Abelson|MIT Press|1996|9780262510875|2|2|2|Classic CS fundamentals with Scheme|2025-04-08|1
+26|The Art of Computer Programming Vol 1|Knuth|Addison-Wesley|1997|9780201896831|2|1|1|Fundamental algorithms by Knuth|2025-04-08|1
+27|Algorithms|Sedgewick|Addison-Wesley|2011|9780321573513|2|3|3|Comprehensive algorithms with Java|2025-04-08|1
+28|Competitive Programming 3|Steven Halim|Lulu|2013|9789810940522|2|2|2|Contest programming techniques and problems|2025-04-08|1
+29|Cracking the Coding Interview|Gayle McDowell|CareerCup|2015|9780984782857|2|5|5|189 programming interview questions|2025-04-08|1
+30|Programming Pearls|Jon Bentley|Addison-Wesley|1999|9780201657883|2|3|3|Practical problem-solving for programmers|2025-04-08|1
+31|Python Crash Course|Eric Matthes|No Starch Press|2019|9781593279288|1|5|5|Hands-on introduction to Python programming|2025-04-08|1
+32|Fluent Python|Luciano Ramalho|O'Reilly|2022|9781492056355|1|3|3|Clear concise and effective Python|2025-04-08|1
+33|Learning Python|Mark Lutz|O'Reilly|2013|9781449355739|1|3|3|Powerful object-oriented programming|2025-04-08|1
+34|Effective Python|Brett Slatkin|Addison-Wesley|2019|9780134853987|1|3|3|90 ways to write better Python|2025-04-08|1
+35|Python for Data Analysis|Wes McKinney|O'Reilly|2022|9781098104030|3|4|4|Data wrangling with Pandas NumPy and IPython|2025-04-08|1
+36|Automate the Boring Stuff with Python|Al Sweigart|No Starch Press|2019|9781593279929|1|4|4|Practical programming for beginners|2025-04-08|1
+37|The C Programming Language|Kernighan|Prentice Hall|1988|9780131103627|2|3|3|Classic C reference by K&R|2025-04-08|1
+38|C++ Primer|Stanley Lippman|Addison-Wesley|2012|9780321714114|2|3|3|Comprehensive C++ introduction|2025-04-08|1
+39|Effective C++|Scott Meyers|Addison-Wesley|2005|9780321334879|2|3|3|55 ways to improve your C++ programs|2025-04-08|1
+40|Modern C++ Design|Andrei Alexandrescu|Addison-Wesley|2001|9780201704310|2|2|2|Generic programming and design patterns|2025-04-08|1
+41|The Rust Programming Language|Klabnik|No Starch Press|2019|9781718500044|1|3|3|Official guide to Rust language|2025-04-08|1
+42|Programming Rust|Blandy|O'Reilly|2021|9781492052548|1|2|2|Fast and safe systems programming|2025-04-08|1
+43|JavaScript: The Good Parts|Douglas Crockford|O'Reilly|2008|9780596517748|1|4|4|Extracting the best of JavaScript|2025-04-08|1
+44|Eloquent JavaScript|Marijn Haverbeke|No Starch Press|2018|9781593279509|1|4|4|Modern introduction to programming|2025-04-08|1
+45|You Don't Know JS|Kyle Simpson|O'Reilly|2014|9781491924464|1|3|3|Deep dive into JavaScript mechanics|2025-04-08|1
+46|Learning React|Alex Banks|O'Reilly|2020|9781492051725|1|3|3|Functional web development with React|2025-04-08|1
+47|Node.js Design Patterns|Mario Casciaro|Packt|2020|9781839214110|1|2|2|Design and implement production-grade Node.js apps|2025-04-08|1
+48|Pro Git|Scott Chacon|Apress|2014|9781484200773|2|5|5|Everything about the Git version control system|2025-04-08|1
+49|Docker Deep Dive|Nigel Poulton|Independently Published|2020|9781521822807|2|4|4|Containers from zero to hero|2025-04-08|1
+50|Kubernetes in Action|Marko Luksa|Manning|2017|9781617293726|2|3|3|Running containerized apps in Kubernetes|2025-04-08|1
+51|Hands-On Machine Learning|Aurélien Géron|O'Reilly|2022|9781098125974|3|5|5|Scikit-learn Keras and TensorFlow guide|2025-04-08|1
+52|Pattern Recognition and Machine Learning|Bishop|Springer|2006|9780387310732|3|2|2|Bayesian perspective on ML|2025-04-08|1
+53|The Elements of Statistical Learning|Hastie|Springer|2009|9780387848570|3|2|2|Statistical learning theory and methods|2025-04-08|1
+54|Machine Learning Yearning|Andrew Ng|Deeplearning.ai|2018|9780000000000|3|3|3|Technical strategy for AI projects|2025-04-08|1
+55|Reinforcement Learning: An Introduction|Sutton|MIT Press|2018|9780262039246|3|2|2|Foundational RL textbook by Sutton and Barto|2025-04-08|1
+56|Natural Language Processing with Python|Bird|O'Reilly|2009|9780596516499|3|3|3|Analyzing text with NLTK|2025-04-08|1
+57|Speech and Language Processing|Jurafsky|Pearson|2020|9780131873216|3|2|2|NLP and computational linguistics|2025-04-08|1
+58|Neural Networks and Deep Learning|Michael Nielsen|Determination Press|2015|9780000000001|3|3|3|Visual interactive guide to deep learning|2025-04-08|1
+59|Probabilistic Graphical Models|Koller|MIT Press|2009|9780262013192|3|1|1|Principles and techniques for PGMs|2025-04-08|1
+60|Feature Engineering for Machine Learning|Zheng|O'Reilly|2018|9781491953242|3|3|3|Principles and techniques for data scientists|2025-04-08|1
+61|Data Science from Scratch|Joel Grus|O'Reilly|2019|9781492041139|3|4|4|First principles with Python|2025-04-08|1
+62|Practical Statistics for Data Scientists|Bruce|O'Reilly|2020|9781492072942|3|3|3|50 essential concepts for data science|2025-04-08|1
+63|The Data Warehouse Toolkit|Kimball|Wiley|2013|9781118530801|3|2|2|Definitive guide to dimensional modeling|2025-04-08|1
+64|Designing Data-Intensive Applications|Martin Kleppmann|O'Reilly|2017|9781449373320|2|4|4|Big ideas behind reliable scalable systems|2025-04-08|1
+65|High Performance MySQL|Schwartz|O'Reilly|2012|9781449314286|2|2|2|Optimization backup replication and more|2025-04-08|1
+66|MongoDB: The Definitive Guide|Shannon Bradshaw|O'Reilly|2019|9781491954461|2|3|3|Powerful and scalable data storage|2025-04-08|1
+67|Redis in Action|Josiah Carlson|Manning|2013|9781617290855|2|2|2|Building real-time data apps with Redis|2025-04-08|1
+68|Cassandra: The Definitive Guide|Hewitt|O'Reilly|2022|9781098115609|2|2|2|Distributed data for cloud applications|2025-04-08|1
+69|NoSQL Distilled|Fowler|Addison-Wesley|2012|9780321826626|2|3|3|Brief guide to emerging world of NoSQL|2025-04-08|1
+70|Clean Architecture|Robert C. Martin|Prentice Hall|2017|9780134494166|2|4|4|Craftsman's guide to software structure|2025-04-08|1
+71|Patterns of Enterprise Application Architecture|Fowler|Addison-Wesley|2002|9780321127426|2|2|2|Catalog of patterns for enterprise apps|2025-04-08|1
+72|Microservices Patterns|Chris Richardson|Manning|2018|9781617294549|2|3|3|With examples in Java|2025-04-08|1
+73|Building Microservices|Sam Newman|O'Reilly|2021|9781492034025|2|3|3|Designing fine-grained systems|2025-04-08|1
+74|Software Architecture Patterns|Mark Richards|O'Reilly|2015|9781491971437|2|3|3|Understanding common architecture patterns|2025-04-08|1
+75|Fundamentals of Software Architecture|Richards|O'Reilly|2020|9781492043454|2|3|3|Engineering approach to architecture|2025-04-08|1
+76|The DevOps Handbook|Gene Kim|IT Revolution|2016|9781942788003|2|4|4|Creating world-class agility reliability security|2025-04-08|1
+77|Accelerate|Nicole Forsgren|IT Revolution|2018|9781942788331|2|3|3|Science of lean software and DevOps|2025-04-08|1
+78|Infrastructure as Code|Kief Morris|O'Reilly|2020|9781098114671|2|3|3|Dynamic systems for the cloud age|2025-04-08|1
+79|Terraform: Up and Running|Yevgeniy Brikman|O'Reilly|2022|9781098116743|2|3|3|Writing infrastructure as code|2025-04-08|1
+80|The Art of Unix Programming|Eric Raymond|Addison-Wesley|2003|9780131429017|2|2|2|Design and philosophy of Unix|2025-04-08|1
+81|Computer Organization and Design|Patterson|Morgan Kaufmann|2017|9780128122754|2|2|2|Hardware software interface|2025-04-08|1
+82|Computer Architecture: A Quantitative Approach|Hennessy|Morgan Kaufmann|2019|9780128119051|2|2|2|Modern processor design principles|2025-04-08|1
+83|Modern Operating Systems|Tanenbaum|Pearson|2014|9780133591620|2|3|3|OS concepts with real-world examples|2025-04-08|1
+84|Computer Networks|Tanenbaum|Pearson|2010|9780132126953|2|3|3|Systematic approach to networking|2025-04-08|1
+85|Cryptography and Network Security|Stallings|Pearson|2017|9780134444284|2|2|2|Principles and practice of security|2025-04-08|1
+86|The Web Application Hacker's Handbook|Stuttard|Wiley|2011|9781118026472|2|2|2|Finding and exploiting security flaws|2025-04-08|1
+87|Hacking: The Art of Exploitation|Erickson|No Starch Press|2008|9781593271442|2|2|2|Low-level security and exploitation|2025-04-08|1
+88|The Tangled Web|Michal Zalewski|No Starch Press|2011|9781593273880|2|2|2|Guide to securing modern web apps|2025-04-08|1
+89|Cybersecurity Essentials|Charles Brooks|Wiley|2018|9781119362395|2|3|3|Introduction to cybersecurity concepts|2025-04-08|1
+90|Linear Algebra and Its Applications|Strang|Cengage|2016|9781305658004|3|3|3|Foundational linear algebra for engineers|2025-04-08|1
+91|Calculus|James Stewart|Cengage|2015|9781285740621|3|3|3|Standard calculus textbook|2025-04-08|1
+92|Discrete Mathematics and Its Applications|Rosen|McGraw-Hill|2018|9781259676512|3|3|3|Foundations of computer science math|2025-04-08|1
+93|Introduction to Probability|Bertsekas|Athena Scientific|2008|9781886529236|3|2|2|Probabilistic models and inference|2025-04-08|1
+94|Statistical Inference|Casella|Duxbury|2001|9780534243128|3|2|2|Graduate-level statistical theory|2025-04-08|1
+95|Mathematics for Machine Learning|Deisenroth|Cambridge|2020|9781108470049|3|3|3|Core math concepts for ML practitioners|2025-04-08|1
+96|Concrete Mathematics|Graham|Addison-Wesley|1994|9780201558029|3|2|2|Foundation for computer science math|2025-04-08|1
+97|Introduction to the Theory of Computation|Sipser|Cengage|2012|9781133187790|3|2|2|Automata languages and computation|2025-04-08|1
+98|Compilers: Principles Techniques and Tools|Aho|Pearson|2006|9780321486813|2|2|2|Dragon book for compiler design|2025-04-08|1
+99|Programming Language Pragmatics|Scott|Morgan Kaufmann|2015|9780124104099|2|2|2|Language design and implementation|2025-04-08|1
+100|Types and Programming Languages|Pierce|MIT Press|2002|9780262162098|2|1|1|Formal foundations of type systems|2025-04-08|1
+101|Human-Computer Interaction|Dix|Pearson|2003|9780130461094|4|3|3|Classic HCI textbook|2025-04-08|1
+102|Don't Make Me Think|Steve Krug|New Riders|2014|9780321965516|4|4|4|Common sense approach to web usability|2025-04-08|1
+103|The Design of Everyday Things|Norman|Basic Books|2013|9780465050659|4|4|4|Principles of good design|2025-04-08|1
+104|About Face: The Essentials of Interaction Design|Cooper|Wiley|2014|9781118766576|4|2|2|Interaction design reference|2025-04-08|1
+105|Designing Interfaces|Tidwell|O'Reilly|2020|9781492051831|4|3|3|Patterns for effective interaction design|2025-04-08|1
+106|Refactoring UI|Adam Wathan|Self-Published|2018|9780000000002|4|3|3|Design tips for developers|2025-04-08|1
+107|CSS: The Definitive Guide|Meyer|O'Reilly|2017|9781449393199|1|3|3|Visual presentation for the web|2025-04-08|1
+108|HTML and CSS: Design and Build Websites|Duckett|Wiley|2011|9781118008188|1|4|4|Beginner friendly web design guide|2025-04-08|1
+109|Learning Web Design|Jennifer Robbins|O'Reilly|2018|9781491960202|1|3|3|Beginner guide to HTML CSS JavaScript|2025-04-08|1
+110|JavaScript and JQuery|Duckett|Wiley|2014|9781118531648|1|3|3|Interactive front-end web development|2025-04-08|1
+111|Vue.js Up and Running|Callum Macrae|O'Reilly|2018|9781491997246|1|2|2|Building accessible and performant web apps|2025-04-08|1
+112|Angular: Up and Running|Shyam Seshadri|O'Reilly|2018|9781491999837|1|2|2|Learning Angular step by step|2025-04-08|1
+113|Full Stack Development with Spring Boot and React|Juha Hinkula|Packt|2022|9781801816786|1|2|2|Full stack web development guide|2025-04-08|1
+114|Flask Web Development|Miguel Grinberg|O'Reilly|2018|9781491991732|1|3|3|Developing web applications with Python|2025-04-08|1
+115|Django for Beginners|William Vincent|Self-Published|2022|9781735467221|1|3|3|Build websites with Python and Django|2025-04-08|1
+116|RESTful Web APIs|Richardson|O'Reilly|2013|9781449358068|2|3|3|Services for a changing world|2025-04-08|1
+117|GraphQL in Action|Samer Buna|Manning|2021|9781617295546|1|2|2|Building efficient flexible APIs with GraphQL|2025-04-08|1
+118|Designing Distributed Systems|Burns|O'Reilly|2018|9781491983645|2|3|3|Patterns and paradigms for scalable systems|2025-04-08|1
+119|Cloud Native Patterns|Cornelia Davis|Manning|2019|9781617294297|2|2|2|Designing change-tolerant software|2025-04-08|1
+120|AWS Certified Solutions Architect Study Guide|Piper|Sybex|2019|9781119713104|2|3|3|Associate certification exam prep|2025-04-08|1
+121|The Lean Startup|Eric Ries|Crown Business|2011|9780307887894|4|5|5|How constant innovation creates success|2025-04-08|1
+122|Zero to One|Peter Thiel|Crown Business|2014|9780804139021|4|4|4|Notes on startups and the future|2025-04-08|1
+123|The Hard Thing About Hard Things|Ben Horowitz|HarperBusiness|2014|9780062273208|4|3|3|Building a business when no easy answers exist|2025-04-08|1
+124|Good to Great|Jim Collins|HarperBusiness|2001|9780066620992|4|3|3|Why some companies make the leap|2025-04-08|1
+125|The Innovator's Dilemma|Clayton Christensen|Harvard Business Review|1997|9780875845852|4|3|3|Revolutionary book on disruptive innovation|2025-04-08|1
+126|Hooked|Nir Eyal|Portfolio|2014|9781591847786|4|3|3|How to build habit-forming products|2025-04-08|1
+127|The Mom Test|Rob Fitzpatrick|Robfitz Ltd|2013|9781492180746|4|4|4|Talking to customers when everyone lies|2025-04-08|1
+128|Inspired|Marty Cagan|Wiley|2017|9781119387503|4|3|3|How to create tech products customers love|2025-04-08|1
+129|Shape Up|Ryan Singer|Basecamp|2019|9780000000003|4|3|3|Stop running in circles and ship work that matters|2025-04-08|1
+130|Continuous Discovery Habits|Teresa Torres|Product Talk|2021|9781736633304|4|3|3|Discover products that create customer value|2025-04-08|1
+131|Thinking Fast and Slow|Daniel Kahneman|Farrar|2011|9780374533557|4|4|4|Dual-process theory of mind|2025-04-08|1
+132|Sapiens|Yuval Noah Harari|Harper|2015|9780062316097|4|4|4|Brief history of humankind|2025-04-08|1
+133|Homo Deus|Yuval Noah Harari|Harper|2017|9780062464316|4|3|3|Brief history of tomorrow|2025-04-08|1
+134|The Pragmatic Programmer 20th Anniversary|Thomas|Addison-Wesley|2019|9780135957059|2|3|3|Your journey to mastery updated edition|2025-04-08|1
+135|A Mind for Numbers|Barbara Oakley|TarcherPerigee|2014|9780399165245|4|4|4|How to excel at math and science|2025-04-08|1
+136|Make It Stick|Brown|Harvard University Press|2014|9780674729018|4|3|3|Science of successful learning|2025-04-08|1
+137|Deep Work|Cal Newport|Grand Central|2016|9781455586691|4|4|4|Rules for focused success in distracted world|2025-04-08|1
+138|So Good They Can't Ignore You|Cal Newport|Grand Central|2012|9781455509126|4|3|3|Why skills trump passion in the quest for work|2025-04-08|1
+139|How to Win Friends and Influence People|Carnegie|Simon and Schuster|1936|9780671027032|4|4|4|Classic guide to interpersonal skills|2025-04-08|1
+140|Atomic Habits|James Clear|Avery|2018|9780735211292|4|5|5|Easy and proven way to build good habits|2025-04-08|1
+141|The Software Engineer's Guidebook|Gergely Orosz|Pragmatic Bookshelf|2023|9789083381824|2|4|4|Navigating senior staff and principal roles|2025-04-08|1
+142|A Philosophy of Software Design|John Ousterhout|Yaknyam Press|2021|9781732102217|2|3|3|Reducing complexity in software systems|2025-04-08|1
+143|Software Engineering at Google|Winters|O'Reilly|2020|9781492082798|2|3|3|Lessons learned from programming over time|2025-04-08|1
+144|The Art of Doing Science and Engineering|Hamming|Stripe Press|2020|9781732265172|2|2|2|Learning to learn technical excellence|2025-04-08|1
+145|The Manager's Path|Camille Fournier|O'Reilly|2017|9781491973899|4|3|3|Guide for tech leaders navigating growth|2025-04-08|1
+146|An Elegant Puzzle|Will Larson|Stripe Press|2019|9781732265189|4|3|3|Systems of engineering management|2025-04-08|1
+147|Staff Engineer|Will Larson|Self-Published|2021|9781736417911|2|3|3|Leadership beyond the management track|2025-04-08|1
+148|The Senior Software Engineer|David Copeland|Independently Published|2013|9780615773070|2|2|2|11 practices of the seasoned practitioner|2025-04-08|1
+149|Fundamentals of Computer Graphics|Shirley|CRC Press|2021|9780367505035|3|2|2|Essential rendering and graphics algorithms|2025-04-08|1
+150|Real-Time Rendering|Akenine-Moller|CRC Press|2018|9781138627000|3|2|2|GPU rendering techniques and theory|2025-04-08|1
+151|Game Programming Patterns|Robert Nystrom|Genever Benning|2014|9780990582908|1|3|3|Software patterns for game development|2025-04-08|1
+152|The Art of Game Design|Jesse Schell|CRC Press|2019|9781138632059|4|3|3|A book of lenses for game design|2025-04-08|1
+153|Introduction to Game Design Prototyping and Development|Burgun|Addison-Wesley|2020|9780136619628|4|2|2|Practical guide to building games|2025-04-08|1
+154|Digital Minimalism|Cal Newport|Portfolio|2019|9780525536512|4|3|3|Choosing a focused life in a noisy world|2025-04-08|1
+155|The Art of Problem Solving Vol 1|Rusczyk|AoPS|2006|9780977304561|3|3|3|Foundational competition mathematics|2025-04-08|1
+156|Introduction to Linear Algebra|Gilbert Strang|Wellesley-Cambridge|2016|9780980232776|3|3|3|Accessible linear algebra from MIT|2025-04-08|1
+157|Numerical Methods for Engineers|Chapra|McGraw-Hill|2014|9780073397924|3|2|2|Applied numerical analysis for engineers|2025-04-08|1
+158|Engineering Mathematics|Stroud|Macmillan|2020|9781352010275|3|3|3|Comprehensive engineering math guide|2025-04-08|1
+159|Applied Cryptography|Bruce Schneier|Wiley|2015|9781119096726|2|2|2|Protocols algorithms and source code in C|2025-04-08|1
+160|Serious Cryptography|Aumasson|No Starch Press|2017|9781593278267|2|2|2|Practical introduction to modern encryption|2025-04-08|1
+161|The Linux Command Line|Shotts|No Starch Press|2019|9781593279523|2|4|4|A complete introduction to Linux|2025-04-08|1
+162|Unix and Linux System Administration Handbook|Nemeth|Addison-Wesley|2017|9780134277554|2|2|2|Comprehensive Linux administration guide|2025-04-08|1
+163|Learning the vi and Vim Editors|Robbins|O'Reilly|2008|9780596529833|2|3|3|Unix text processing with vi and Vim|2025-04-08|1
+164|Programming Elixir|Dave Thomas|Pragmatic Bookshelf|2018|9781680502992|1|2|2|Functional concurrent distributed programming|2025-04-08|1
+165|Seven Languages in Seven Weeks|Tate|Pragmatic Bookshelf|2010|9781934356593|1|2|2|A pragmatic guide to learning languages|2025-04-08|1

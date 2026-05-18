@@ -1,1 +1,1 @@
-1|1|500|2025-"C:/Users/alifa/OneDrive/Documents/GitHub/Library-and-resource-management-system-primary/build/LibraryManagementSystem.exe"|APPROVED|0|2025-04-08|Approved
+1|1|500|2025-04-08|APPROVED|0|2025-04-08|Approved

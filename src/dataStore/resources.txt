@@ -32,8 +32,8 @@
 32|Fluent Python|Luciano Ramalho|O'Reilly|2022|9781492056355|1|3|3|Clear concise and effective Python|2025-04-08|1
 33|Learning Python|Mark Lutz|O'Reilly|2013|9781449355739|1|3|3|Powerful object-oriented programming|2025-04-08|1
 34|Effective Python|Brett Slatkin|Addison-Wesley|2019|9780134853987|1|3|3|90 ways to write better Python|2025-04-08|1
-35|Python for Data Analysis|Wes McKinney|O'Reilly|2022|9781098104030|3|4|4|Data wrangling with Pandas NumPy and IPython|2025-04-08|1
-36|Automate the Boring Stuff with Python|Al Sweigart|No Starch Press|2019|9781593279929|1|4|4|Practical programming for beginners|2025-04-08|1
+35|Python for Data Analysis|Wes McKinney|O'Reilly|2022|9781098104030|3|4|3|Data wrangling with Pandas NumPy and IPython|2025-04-08|1
+36|Automate the Boring Stuff with Python|Al Sweigart|No Starch Press|2019|9781593279929|1|4|3|Practical programming for beginners|2025-04-08|1
 37|The C Programming Language|Kernighan|Prentice Hall|1988|9780131103627|2|3|3|Classic C reference by K&R|2025-04-08|1
 38|C++ Primer|Stanley Lippman|Addison-Wesley|2012|9780321714114|2|3|3|Comprehensive C++ introduction|2025-04-08|1
 39|Effective C++|Scott Meyers|Addison-Wesley|2005|9780321334879|2|3|3|55 ways to improve your C++ programs|2025-04-08|1
@@ -42,7 +42,7 @@
 42|Programming Rust|Blandy|O'Reilly|2021|9781492052548|1|2|2|Fast and safe systems programming|2025-04-08|1
 43|JavaScript: The Good Parts|Douglas Crockford|O'Reilly|2008|9780596517748|1|4|4|Extracting the best of JavaScript|2025-04-08|1
 44|Eloquent JavaScript|Marijn Haverbeke|No Starch Press|2018|9781593279509|1|4|4|Modern introduction to programming|2025-04-08|1
-45|You Don't Know JS|Kyle Simpson|O'Reilly|2014|9781491924464|1|3|3|Deep dive into JavaScript mechanics|2025-04-08|1
+45|You Don't Know JS|Kyle Simpson|O'Reilly|2014|9781491924464|1|3|2|Deep dive into JavaScript mechanics|2025-04-08|1
 46|Learning React|Alex Banks|O'Reilly|2020|9781492051725|1|3|3|Functional web development with React|2025-04-08|1
 47|Node.js Design Patterns|Mario Casciaro|Packt|2020|9781839214110|1|2|2|Design and implement production-grade Node.js apps|2025-04-08|1
 48|Pro Git|Scott Chacon|Apress|2014|9781484200773|2|5|5|Everything about the Git version control system|2025-04-08|1
@@ -63,8 +63,8 @@
 63|The Data Warehouse Toolkit|Kimball|Wiley|2013|9781118530801|3|2|2|Definitive guide to dimensional modeling|2025-04-08|1
 64|Designing Data-Intensive Applications|Martin Kleppmann|O'Reilly|2017|9781449373320|2|4|4|Big ideas behind reliable scalable systems|2025-04-08|1
 65|High Performance MySQL|Schwartz|O'Reilly|2012|9781449314286|2|2|2|Optimization backup replication and more|2025-04-08|1
-66|MongoDB: The Definitive Guide|Shannon Bradshaw|O'Reilly|2019|9781491954461|2|3|3|Powerful and scalable data storage|2025-04-08|1
-67|Redis in Action|Josiah Carlson|Manning|2013|9781617290855|2|2|2|Building real-time data apps with Redis|2025-04-08|1
+66|MongoDB: The Definitive Guide|Shannon Bradshaw|O'Reilly|2019|9781491954461|2|3|1|Powerful and scalable data storage|2025-04-08|1
+67|Redis in Action|Josiah Carlson|Manning|2013|9781617290855|2|2|1|Building real-time data apps with Redis|2025-04-08|1
 68|Cassandra: The Definitive Guide|Hewitt|O'Reilly|2022|9781098115609|2|2|2|Distributed data for cloud applications|2025-04-08|1
 69|NoSQL Distilled|Fowler|Addison-Wesley|2012|9780321826626|2|3|3|Brief guide to emerging world of NoSQL|2025-04-08|1
 70|Clean Architecture|Robert C. Martin|Prentice Hall|2017|9780134494166|2|4|4|Craftsman's guide to software structure|2025-04-08|1
@@ -74,7 +74,7 @@
 74|Software Architecture Patterns|Mark Richards|O'Reilly|2015|9781491971437|2|3|3|Understanding common architecture patterns|2025-04-08|1
 75|Fundamentals of Software Architecture|Richards|O'Reilly|2020|9781492043454|2|3|3|Engineering approach to architecture|2025-04-08|1
 76|The DevOps Handbook|Gene Kim|IT Revolution|2016|9781942788003|2|4|4|Creating world-class agility reliability security|2025-04-08|1
-77|Accelerate|Nicole Forsgren|IT Revolution|2018|9781942788331|2|3|3|Science of lean software and DevOps|2025-04-08|1
+77|Accelerate|Nicole Forsgren|IT Revolution|2018|9781942788331|2|3|2|Science of lean software and DevOps|2025-04-08|1
 78|Infrastructure as Code|Kief Morris|O'Reilly|2020|9781098114671|2|3|3|Dynamic systems for the cloud age|2025-04-08|1
 79|Terraform: Up and Running|Yevgeniy Brikman|O'Reilly|2022|9781098116743|2|3|3|Writing infrastructure as code|2025-04-08|1
 80|The Art of Unix Programming|Eric Raymond|Addison-Wesley|2003|9780131429017|2|2|2|Design and philosophy of Unix|2025-04-08|1
@@ -85,7 +85,7 @@
 85|Cryptography and Network Security|Stallings|Pearson|2017|9780134444284|2|2|2|Principles and practice of security|2025-04-08|1
 86|The Web Application Hacker's Handbook|Stuttard|Wiley|2011|9781118026472|2|2|2|Finding and exploiting security flaws|2025-04-08|1
 87|Hacking: The Art of Exploitation|Erickson|No Starch Press|2008|9781593271442|2|2|2|Low-level security and exploitation|2025-04-08|1
-88|The Tangled Web|Michal Zalewski|No Starch Press|2011|9781593273880|2|2|2|Guide to securing modern web apps|2025-04-08|1
+88|The Tangled Web|Michal Zalewski|No Starch Press|2011|9781593273880|2|2|1|Guide to securing modern web apps|2025-04-08|1
 89|Cybersecurity Essentials|Charles Brooks|Wiley|2018|9781119362395|2|3|3|Introduction to cybersecurity concepts|2025-04-08|1
 90|Linear Algebra and Its Applications|Strang|Cengage|2016|9781305658004|3|3|3|Foundational linear algebra for engineers|2025-04-08|1
 91|Calculus|James Stewart|Cengage|2015|9781285740621|3|3|3|Standard calculus textbook|2025-04-08|1

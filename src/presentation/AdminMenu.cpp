@@ -1042,6 +1042,15 @@ void AdminMenu::displayFinancialMenu()
         case 4:
             handleViewAllFines();
             break;
+        case 5:
+            handleImposeFine();
+            break;
+        case 6:
+            handleUpdateFine();
+            break;
+        case 7:
+            handleDeleteFine();
+            break;
         case 0:
             running = false;
             break;
@@ -1051,6 +1060,7 @@ void AdminMenu::displayFinancialMenu()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin.get();
             break;
+       
         }
     }
 }

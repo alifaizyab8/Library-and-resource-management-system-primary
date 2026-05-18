@@ -48,7 +48,8 @@ public:
         os << "User ID: " << u.getUserId()
            << " | Name: " << u.getFirstName() << " " << u.getLastName()
            << " | Username: " << u.getUsername()
-           << " | Active: " << (u.getIsActive() ? "Yes" : "SUSPENDED");
+           << " | Active: " << (u.getIsActive() ? "Yes" : "SUSPENDED")
+           << " | Balance Amount: "<< (u.getBalance());
         return os;
     }
 

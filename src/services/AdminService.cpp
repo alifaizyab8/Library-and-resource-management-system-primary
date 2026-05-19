@@ -39,7 +39,7 @@ bool AdminService::deleteResource(int resourceId)
 }
 
 std::unique_ptr<Resource> AdminService::getResourceById(int resourceId)
-{
+{ 
     return resourceStore.getById(resourceId);
 }
 
